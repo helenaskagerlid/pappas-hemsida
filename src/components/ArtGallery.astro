@@ -5,20 +5,28 @@ import ArtCard from "./ArtCard.astro";
 const allArtworks = await getCollection("artGallery");
 ---
 
-<h2 id="artGallery" class="art-gallery-title">Konstgalleri</h2>
-<section class="art-grid">
-  {
-    allArtworks.map((artwork) => (
-      <ArtCard
-        title={artwork.data.title}
-        image={artwork.data.image}
-        url={`/artgallery/${artwork.id}`}
-      />
-    ))
-  }
+<section id="artGallery" class="art-gallery-section">
+  <h2 class="art-gallery-title">Konstgalleri</h2>
+  <div class="art-grid">
+    {
+      allArtworks.map((artwork) => (
+        <ArtCard
+          title={artwork.data.title}
+          image={artwork.data.image}
+          url={`/artgallery/${artwork.id}`}
+        />
+      ))
+    }
+  </div>
 </section>
 
 <style>
+  .art-gallery-section {
+    padding-block-start: 50px;
+    background-color: rgb(127, 144, 133);
+    width: 100vw;
+  }
+
   .art-gallery-img {
     height: 500px;
   }
@@ -30,6 +38,7 @@ const allArtworks = await getCollection("artGallery");
     row-gap: 22px;
     margin: 20px 0;
     overflow: hidden;
+    padding-inline: 150px;
 
     @media (max-width: 800px) {
       grid-template-columns: repeat(2, 1fr);
@@ -46,5 +55,6 @@ const allArtworks = await getCollection("artGallery");
     color: white;
     font-size: 33px;
     font-family: "Raleway", sans-serif;
+    padding-inline: 150px;
   }
 </style>

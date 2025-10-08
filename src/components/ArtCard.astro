@@ -5,7 +5,7 @@ const { title, image, url } = Astro.props;
 ---
 
 <article class="art-card">
-  <a href={url}>
+  <a class="art-card-link" href={url}>
     <Image class="art-image" src={image} height={350} width={280} alt={title} />
 
     <div class="art-card__description">
@@ -16,6 +16,11 @@ const { title, image, url } = Astro.props;
 </article>
 
 <style>
+  .art-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .art-title {
     color: white;
     font-family: "Raleway", sans-serif;
