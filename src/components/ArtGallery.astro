@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import ArtCard from "./ArtCard.astro";
+
+const allArtworks = await getCollection("artGallery");
+---
+
+<h2 id="artGallery" class="art-gallery-title">Konstgalleri</h2>
+<section class="art-grid">
+  {
+    allArtworks.map((artwork) => (
+      <ArtCard
+        title={artwork.data.title}
+        image={artwork.data.image}
+        url={`/artgallery/${artwork.id}`}
+      />
+    ))
+  }
+</section>
+
+<style>
+  .art-gallery-img {
+    height: 500px;
+  }
+
+  .art-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 22px;
+    row-gap: 22px;
+    margin: 20px 0;
+    overflow: hidden;
+
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+      width: 530px;
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+      width: 250px;
+    }
+  }
+
+  .art-gallery-title {
+    color: white;
+    font-size: 33px;
+    font-family: "Raleway", sans-serif;
+  }
+</style>
