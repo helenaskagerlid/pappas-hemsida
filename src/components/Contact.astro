@@ -1,0 +1,81 @@
+<section class="contact-section">
+  <h2 class="contact-heading">Kontakta mig</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Namn" required />
+    <input type="email" placeholder="Mail" required />
+    <textarea placeholder="Meddelande" required></textarea>
+    <button type="submit">Skicka</button>
+  </form>
+</section>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .contact-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-heading {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    color: white;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+    padding-block-end: 50px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid rgb(90, 115, 100);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    background-color: white;
+    color: #333;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: rgb(70, 95, 80);
+    box-shadow: 0 0 5px rgba(90, 115, 100, 0.4);
+  }
+
+  .contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .contact-form button {
+    width: 50%;
+    align-self: center;
+    border: 1px solid white;
+    background-color: rgb(75, 100, 85);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .contact-form button:hover {
+    background-color: rgb(75, 100, 85);
+  }
+</style>
