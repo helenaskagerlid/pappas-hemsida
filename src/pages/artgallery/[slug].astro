@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import { render } from "astro:content";
+import { getCollection } from "astro:content";
+export async function getStaticPaths() {
+  const artGallery = await getCollection("artGallery");
+
+  return [...artGallery].map((artwork) => ({
+    params: { slug: artwork.id },
+    props: { artwork },
+  }));
+}
+
+const { artwork } = Astro.props;
+const { Content } = await render(artwork);
+---
+
+<div class="person-content">
+  <article class="person">
+    <Image
+      src={artwork.data.image}
+      height={300}
+      width={300}
+      loading="eager"
+      alt=`${artwork.data.title} portrait`
+    />
+
+    <div class="person-description">
+      <h1 class="person-name gradient-title">{artwork.data.title}</h1>
+      <div class="person-bio"><Content /></div>
+    </div>
+  </article>
+</div>
