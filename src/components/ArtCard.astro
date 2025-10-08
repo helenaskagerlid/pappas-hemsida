@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+
+const { title, image, url } = Astro.props;
+---
+
+<article class="art-card">
+  <a href={url}>
+    <Image class="art-image" src={image} height={350} width={280} alt={title} />
+
+    <div class="art-card__description">
+      <h3 class="art-title">{title}</h3>
+      <p class="art-summary"></p>
+    </div>
+  </a>
+</article>
+
+<style>
+  .art-title {
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+  }
+</style>
