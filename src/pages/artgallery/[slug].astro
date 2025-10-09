@@ -17,20 +17,44 @@ const { Content } = await render(artwork);
 ---
 
 <Layout>
-  <div class="person-content">
-    <article class="person">
+  <div class="artwork-content">
+    <article class="artwork">
       <Image
         src={artwork.data.image}
-        height={300}
-        width={300}
+        height={400}
+        width={350}
         loading="eager"
-        alt=`${artwork.data.title} portrait`
+        alt=`${artwork.data.title}`
       />
 
-      <div class="person-description">
-        <h1 class="person-name gradient-title">{artwork.data.title}</h1>
-        <div class="person-bio"><Content /></div>
+      <div class="artwork-description">
+        <h1 class="artwork-title">{artwork.data.title}</h1>
+        <div class="artwork-text"><Content /></div>
       </div>
     </article>
   </div>
 </Layout>
+
+<style>
+  html {
+    background-color: rgb(90, 115, 100);
+  }
+
+  .artwork-content {
+    padding-block: 60px;
+  }
+
+  .artwork-title,
+  .artwork-text {
+    font-family: "Raleway", sans-serif;
+    color: white;
+  }
+
+  .artwork-title {
+    font-size: 2rem;
+  }
+
+  .artwork-text {
+    font-size: 1rem;
+  }
+</style>
