@@ -12,7 +12,7 @@ content:
         required: true
       - name: description
         label: Description
-        type: code
+        type: rich-text
       - name: image
         label: Artwork Image
         type: image
