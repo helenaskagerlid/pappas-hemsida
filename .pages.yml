@@ -16,4 +16,4 @@ content:
         required: true
       - name: content
         label: Description
-        type: text
+        type: rich-text
