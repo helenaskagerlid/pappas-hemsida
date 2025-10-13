@@ -1,1 +1,19 @@
 media: "src/assets/images"
+
+content:
+  - name: art-gallery
+    label: Art Gallery
+    type: collection
+    path: src/content/art-gallery
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: image
+        label: Artwork Image
+        type: image
+        required: true
+      - name: content
+        label: Description
+        type: string
