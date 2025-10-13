@@ -14,6 +14,6 @@ content:
         label: Artwork Image
         type: image
         required: true
-      - name: content
+      - name: body
         label: Description
         type: rich-text
