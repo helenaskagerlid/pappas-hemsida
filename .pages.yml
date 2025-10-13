@@ -12,11 +12,9 @@ content:
         required: true
       - name: description
         label: Description
-        type: text
+        type: rich-text
       - name: image
         label: Artwork Image
         type: image
         required: true
-      - name: body
-        label: Body
-        type: rich-text
+
