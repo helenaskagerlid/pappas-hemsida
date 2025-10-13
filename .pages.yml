@@ -17,6 +17,9 @@ content:
         label: Artwork Image
         type: image
         required: true
+      - name: body
+        label: Body
+        type: rich-text
 
     view: 
         fields: [title, description, image]
