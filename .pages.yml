@@ -33,10 +33,10 @@ content:
         label: Title
         type: string
         required: true
-      - name: description
-        label: Description
+      - name: body
+        label: Body
         type: rich-text
 
     view: 
-        fields: [title, description]
+        fields: [title]
 
