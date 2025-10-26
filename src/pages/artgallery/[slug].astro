@@ -28,7 +28,7 @@ const { Content } = await render(artwork);
       />
 
       <div class="artwork-description">
-        <h1 class="artwork-title">{artwork.data.title}</h1>
+        <h2 class="artwork-title">{artwork.data.title}</h2>
         <div class="artwork-text"><Content /></div>
       </div>
     </article>
@@ -44,10 +44,23 @@ const { Content } = await render(artwork);
     padding-block: 60px;
   }
 
+  .artwork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 100px;
+  }
+
   .artwork-title,
   .artwork-text {
     font-family: "Raleway", sans-serif;
     color: white;
+  }
+
+  .artwork-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .artwork-title {
