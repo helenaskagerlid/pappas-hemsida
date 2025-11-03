@@ -1,6 +1,4 @@
-media:
-  input: "public/media"
-  output: "/media/"
+media: "public"
 
 content:
   - name: art-gallery
